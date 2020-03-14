@@ -48,7 +48,8 @@ plainwhite:
 
   social_links:
     # twitter: thelehhman
-    github: coreygao
+    weibo   : jinghaosuiyue
+    github  : coreygao
     linkedIn: in/cong-gao-219669115/ # format: locale/username
 ```
 
