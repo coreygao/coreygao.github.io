@@ -2,7 +2,7 @@
 
 Simplistic jekyll portfolio-style theme for writers.
 
-**Demo**: [thelehhman.com](https://thelehhman.com)
+**Demo**: [coreygao.github.io](http://coreygao.github.io)
 
 ![plainwhite theme preview](/screenshot.png)
 
@@ -48,7 +48,7 @@ plainwhite:
 
   social_links:
     # twitter: thelehhman
-    weibo   : jinghaosuiyue
+    weibo   : Bricoo
     github  : coreygao
     linkedIn: in/cong-gao-219669115/ # format: locale/username
 ```
