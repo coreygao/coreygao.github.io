@@ -49,7 +49,7 @@ plainwhite:
   social_links:
     # twitter: thelehhman
     github: coreygao
-    linkedIn: in/thelehhman # format: locale/username
+    linkedIn: in/cong-gao-219669115/ # format: locale/username
 ```
 
 **Updating Placeholder Image**
