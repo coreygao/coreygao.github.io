@@ -47,7 +47,7 @@ plainwhite:
   date_format: "%b %-d, %Y"
 
   social_links:
-    twitter: thelehhman
+    # twitter: thelehhman
     github: coreygao
     linkedIn: in/thelehhman # format: locale/username
 ```
