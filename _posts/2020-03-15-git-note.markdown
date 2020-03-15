@@ -12,7 +12,7 @@ categories: Github Git
 
 - git commit -m "[tb] add directory_name" 对暂存区的文件进行提交到本地仓库，并添加注释信息。
 
-- git pull --rebase 拉取远程仓库的文件，可能其他人也对代码进行更新
+- git pull --rebase 我们在对项目进行维护的时候，可能回遇到其他同事也对代码进行更新的情况，因此本地的文件不是最新的，需要通过此条命令拉取远程仓库的文件，使本地分支保持最新
 
 - git push 将修改后的文件推送到远程仓库
 
