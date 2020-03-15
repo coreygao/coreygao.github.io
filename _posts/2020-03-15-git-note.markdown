@@ -1,22 +1,24 @@
 ---
 layout: post
 title:  "git常用命令"
-date:   2020-03-15 17:12:00 +0530
+date:   2020-03-15 17:26:00 +0530
 categories: Github Git
 ---
-之前在实习的时候，公司项目代码用Gitlab托管。经过一段时间的摸索，用git对代码进行维护可以总结成下面几步：
+之前我在实习的时候，公司项目代码用GitLab托管。我曾经了解过一点git的知识，经过一段时间的摸索，结合我自己的经验，用git对代码进行维护可以总结成下面几步：
 
-- git status 查看相关文件的状态
+- git status 查看相关文件的状态，可以知道哪些文件被修改（modified），哪些被删除（deleted）。
 
-- git add filename 将后方紧跟的文件进行暂存，以便commit使用。
+- git add filename 将改动的文件进行暂存，以便commit使用。
 
 - git commit -m "[tb] add directory_name" 对暂存区的文件进行提交到本地仓库，并添加注释信息。
 
-- git pull --rebase 我们在对项目进行维护的时候，可能回遇到其他同事也对代码进行更新的情况，因此本地的文件不是最新的，需要通过此条命令拉取远程仓库的文件，使本地分支保持最新
+- git pull --rebase 我们在对项目进行维护的时候，可能回遇到其他同事也对代码进行更新的情况，因此本地的文件不是最新的，需要通过此条命令拉取远程仓库的文件，使本地分支保持最新。
 
-- git push 将修改后的文件推送到远程仓库
+- git push 将修改后的文件推送到远程仓库，至此大功告成！
 
-出现conflict之后，修改file内容，git add之后直接git rebase --continue
+特殊情况：
+
+如果我们在pull拉取远程仓库的文件时，出现conflict报错，应该返回源文件修改file内容，git add该文件之后直接git rebase --continue，而不需要再通过git commit提交。后续步骤保持不变即可。
 
 ssh06
 
