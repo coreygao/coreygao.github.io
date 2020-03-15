@@ -2,7 +2,7 @@
 layout: post
 title:  "linux命令行常用操作"
 date:   2020-03-15 14:00:00 +0530
-categories: gvim
+categories: Gvim
 ---
 vim命令模式下
 
