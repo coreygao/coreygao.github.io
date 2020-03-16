@@ -43,11 +43,10 @@ The "plainwhite" key in \_config.yml is used to customize the theme data.
 ```yaml
 plainwhite:
   name: Corey Gao
-  tagline: Verification. Designer
+  tagline: Design Verification Engineer
   date_format: "%b %-d, %Y"
 
   social_links:
-    # twitter: thelehhman
     weibo   : Bricoo
     github  : coreygao
     linkedIn: in/cong-gao-219669115/ # format: locale/username
