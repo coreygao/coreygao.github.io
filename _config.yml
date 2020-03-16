@@ -13,7 +13,7 @@ sass:
   sass_dir: _sass
 plainwhite:
   name: Corey Gao
-  tagline: Design Verification Engineer
+  tagline: Digital Verification
   date_format: "%b %-d, %Y"
   sitemap: true # set to true to generate sitemap.xml content
 
