@@ -4,7 +4,7 @@ title:  "git常用命令"
 date:   2020-03-15 17:26:00 +0530
 categories: Github Git
 ---
-用git对代码进行维护可以总结成下面几步：
+git操作：
 
 - git status 查看相关文件的状态，可以知道哪些文件被修改（modified），哪些被删除（deleted）。
 
