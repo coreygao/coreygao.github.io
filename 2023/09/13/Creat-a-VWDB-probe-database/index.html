@@ -9,7 +9,7 @@
     
     <title>
         
-            Archive: 2023/9 |
+            Creat a VWDB probe database |
         
         Corey&#39;s blog
     </title>
@@ -87,7 +87,7 @@
                         </li>
                     
                         <li class="menu-item">
-                            <a class="active"
+                            <a class=""
                                href="/archives"
                             >
                                 ARCHIVES
@@ -115,7 +115,7 @@
                 </li>
             
                 <li class="drawer-menu-item flex-center">
-                    <a class="active"
+                    <a class=""
                        href="/archives">ARCHIVES</a>
                 </li>
             
@@ -136,42 +136,162 @@
                 
 
                     <div class="fade-in-down-animation">
-    <div class="archives-container">
-        <div class="archives-timeline border-box">
+    <div class="post-page-container border-box">
+
+        <div class="article-content-container border-box">
+
             
-<div class="archive-list-container border-box">
-    
-        <section class="archive-item border-box">
-            <div class="archive-item-header border-box">
-                <span class="archive-year">2023</span>
-            </div>
-            <ul class="article-list border-box">
+
+            <div class="article-content-bottom border-box">
                 
-                    <li class="article-item border-box">
-                        <span class="article-date border-box">09-13</span>
-                        <a class="article-title border-box text-ellipsis"
-                           href="/2023/09/13/Creat-a-VWDB-probe-database/"
-                        >Creat a VWDB probe database</a>
-                    </li>
+                    <div class="article-title">
+                        Creat a VWDB probe database
+                    </div>
                 
-                    <li class="article-item border-box">
-                        <span class="article-date border-box">09-13</span>
-                        <a class="article-title border-box text-ellipsis"
-                           href="/2023/09/13/hello-world/"
-                        >Hello World</a>
-                    </li>
+
                 
-            </ul>
-        </section>
+                    <div class="article-header border-box">
+                        
+                            <div class="avatar-box border-box">
+                                <img src="/images/avatar.svg">
+                            </div>
+                        
+                        <div class="info-box">
+                            <div class="author">
+                                <span class="name">Corey Gao</span>
+                                
+                                    <span class="author-label">Lv1</span>
+                                
+                            </div>
+                            <div class="meta-info border-box">
+                                
+
+<div class="article-meta-info-container border-box post">
+    <div class="article-meta-info border-box">
+        
+
+
+        
+            <span class="meta-info-item article-create-date">
+                <i class="icon fa-solid fa-calendar-check"></i>&nbsp;
+                <span class="pc">2023-09-13 23:17:23</span>
+                <span class="mobile">2023-09-13 23:17</span>
+            </span>
+
+            <span class="meta-info-item article-update-date">
+                <i class="icon fa-solid fa-file-pen"></i>&nbsp;
+                <span class="pc" data-updated="Wed Sep 13 2023 23:46:48 GMT+0800">2023-09-13 23:46:48</span>
+            </span>
+        
+
+        
+            <span class="meta-info-item article-category border-box"><i class="icon fas fa-folder"></i>&nbsp;
+                <ul>
+                    
+                            <li class="category-item">
+                                
+                                <a href="/categories/tool/">tool  </a>
+                            </li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+            <span class="article-tag meta-info-item border-box">
+                <i class="icon fas fa-tags"></i>&nbsp;
+                <ul>
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/EDA/">EDA</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+        
+        
+        
+    </div>
+
     
 </div>
 
+                            </div>
+                        </div>
+                    </div>
+                
+
+                <div class="article-content keep-markdown-body">
+                    
+
+                    <p> 与shm相比，vwdb的database占用磁盘空间更小，下面介绍如何创建vwdb数据库：</p>
+<ul>
+<li><p>xrun添加仿真选项：<code>+vwdb+shm2vwdb=1</code>或者设置环境变量：<code>setenv CDNS_ENABLE_SHM2VWDB 1</code></p>
+</li>
+<li><p>应该使用ida_probe命令记录wave数据到database中而不是probe命令</p>
+</li>
+<li><p>由于Xcelium23工具有更严格的语法要求，还需要添加编译选项：<code>-plussv</code>和-<code>DISABLE_STRICT_SVFN_CHECK</code>以避免报错</p>
+</li>
+<li><p>可以使用<code>bsub -Is xrun -gui -R</code>调出xrun的gui debug调试界面，进行一些debug工作</p>
+</li>
+</ul>
+<p>下面是一个在instance字符串序列前面添加特定字符的例子，使用tcl语言实现：</p>
+<figure class="highlight tcl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">set</span> op <span class="string">&quot;inst_a inst_b inst_c inst_d&quot;</span></span><br><span class="line"><span class="keyword">set</span> np <span class="string">&quot;&quot;</span></span><br><span class="line"><span class="keyword">foreach</span> i [<span class="keyword">split</span> <span class="variable">$op</span> <span class="string">&quot; &quot;</span>] &#123;</span><br><span class="line">    <span class="keyword">append</span> np <span class="string">&quot;-exclude $i &quot;</span></span><br><span class="line">&#125;</span><br><span class="line">ida_probe -wave -wave_probe_args=<span class="string">&quot;tb_top -ports -depth 5 $np&quot;</span></span><br></pre></td></tr></table></figure>
+
+                </div>
+
+                
+
+                
+                    <ul class="post-tags-box">
+                        
+                            <li class="tag-item">
+                                <a href="/tags/EDA/"><i class="icon fas fa-hashtag"></i>EDA</a>&nbsp;
+                            </li>
+                        
+                    </ul>
+                
+
+                
+                    <div class="article-nav">
+                        
+                        
+                            <div class="article-next">
+                                <a class="next"
+                                   rel="next"
+                                   href="/2023/09/13/hello-world/"
+                                   title="Hello World"
+                                >
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">Hello World</span>
+                                        <span class="post-nav-item">Next posts</span>
+                                    </span>
+                                            <span class="right arrow-icon flex-center">
+                                      <i class="fas fa-chevron-right"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                    </div>
+                
+
+                
+                    
+
+
+
+
+
+
+                
+            </div>
         </div>
+
+        
     </div>
-    
-
-
-
 </div>
 
 
@@ -215,6 +335,19 @@
     </div>
 
     <!-- post tools -->
+    
+        <div class="post-tools right-toc">
+            <div class="post-tools-container border-box">
+    <ul class="tools-list border-box">
+        <!-- PC TOC show toggle -->
+        
+
+        <!-- PC go comment -->
+        
+    </ul>
+</div>
+
+        </div>
     
 
     <!-- side tools -->
@@ -298,6 +431,12 @@
 
 
 <div class="post-scripts">
+    
+        
+<script src="/js/post-helper.js"></script>
+
+        
+        
     
     
     
